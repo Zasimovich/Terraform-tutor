@@ -15,7 +15,7 @@ resource "aws_dynamodb_table" "terraform_state_locks" {
 
 # Create an S3 bucket to store the state file in
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = var.state_bucket
+  bucket              = var.state_bucket
   object_lock_enabled = true
   lifecycle {
     prevent_destroy = true
