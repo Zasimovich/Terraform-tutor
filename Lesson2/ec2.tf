@@ -14,11 +14,13 @@ resource "aws_instance" "web" {
     Name = "web"
   }
 
-  user_data = <<-EOF
-            #!/bin/bash
-            echo "<h1>Say hello to Atlantis!</h1>" > index.html
-            nohup busybox httpd -f -p 8080 &
-            EOF
+  #  user_data = <<-EOF
+  #            #!/bin/bash
+  #            echo "<h1>Say hello to Atlantis!</h1>" > index.html
+  #            nohup busybox httpd -f -p 8080 &
+  #            EOF
+  user_data = file("init.sh")
+
 }
 
 

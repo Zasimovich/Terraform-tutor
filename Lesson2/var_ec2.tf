@@ -5,6 +5,12 @@ variable "http_port" {
   default     = 8080
 }
 
+variable "http80_port" {
+  description = "for HTTP 80 requests"
+  type        = string
+  default     = 80
+}
+
 variable "ssh_port" {
   description = "for SSH requests"
   type        = string
